@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import django_heroku
+#import django_heroku
 from pathlib import Path
 import os
 from pathlib import Path
@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '.herokuapp.com']
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
-django_heroku.settings(locals(), staticfiles=False)
+#django_heroku.settings(locals(), staticfiles=False)
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -86,8 +86,8 @@ DATABASES = {
     "default": {
                 "ENGINE": "django.db.backends.postgresql_psycopg2",
                 "NAME": "d5gilrqcksk06t",
-                "USER": "easonxsctfwuug",
-                "PASSWORD":"986b5bdabfd58039dfa1a1d4b932733f525d79bd09b739fd7a5c1d147ea8dae6",
+                "USER": "lvegmbacyhebqj",
+                "PASSWORD":"608550963ee18f65f17a56145ea4231ad6ce73d7bc5d2a0a4852aea53f515b4a",
                 "HOST": "ec2-44-198-236-169.compute-1.amazonaws.com",
                 "PORT":"5432", 
     }
@@ -144,7 +144,7 @@ LOGIN_REDIRECT_URL = "main-home"
 
 LOGIN_URL = "login"
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 #Define COOKIE AGE for Remember me section
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30 * 12 # 12 Months (Months are 30days so 360 days in total)
