@@ -1,11 +1,7 @@
 from django.shortcuts import render
-<<<<<<< HEAD
-from .connect_api import get_recipe_ids, get_recipes
-=======
 
 from .connect_api import get_recipe_ids, get_recipes, get_random_recipes
 import csv
->>>>>>> 4fd56fe23784c4ef0b5235da88f4d4efc0777dee
 
 # from django.http import HttpResponse
 
@@ -42,4 +38,5 @@ def recipe(request):
     return render(request, "main/recipe.html", {"recipes": recipes, "main_courses": main_course, "snack": snack})
 
 def single_recipe(request):
+    
     return render(request, "main/single-recipe.html", {})
