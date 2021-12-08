@@ -14,13 +14,10 @@ from pathlib import Path
 import os
 from pathlib import Path
 
-<<<<<<< HEAD
-=======
 import dj_database_url
 
 # import django_heroku
 
->>>>>>> 3e05ae341ef2088b62886df523f1be53c46302b2
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,11 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< HEAD
-SECRET_KEY = "django-insecure-u03fiiz(78g6^^+2eot5yml*&f#2g7z&1i7no_bxkw^05dk2!p"
-=======
 SECRET_KEY = os.environ.get("SECRET_KEY", "default-key-123")
->>>>>>> 3e05ae341ef2088b62886df523f1be53c46302b2
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG_VALUE") == "TRUE"
@@ -42,9 +35,6 @@ DEBUG = os.environ.get("DEBUG_VALUE") == "TRUE"
 # If deloy on heroku is not working
 # DEBUG = False
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = ['localhost', '.herokuapp.com']
-=======
 ALLOWED_HOSTS = ["fathomless-cliffs-95117.herokuapp.com", "127.0.0.1", "localhost"]
 
 ADMINS = [
@@ -61,7 +51,6 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
->>>>>>> 3e05ae341ef2088b62886df523f1be53c46302b2
 
 
 # Application definition
@@ -78,10 +67,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
-<<<<<<< HEAD
-#django_heroku.settings(locals(), staticfiles=False)
-=======
->>>>>>> 3e05ae341ef2088b62886df523f1be53c46302b2
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -118,17 +103,6 @@ WSGI_APPLICATION = "LeftoverIngredients.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-<<<<<<< HEAD
-    #"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}
-    "default": {
-                "ENGINE": "django.db.backends.postgresql_psycopg2",
-                "NAME": "d5gilrqcksk06t",
-                "USER": "lvegmbacyhebqj",
-                "PASSWORD":"608550963ee18f65f17a56145ea4231ad6ce73d7bc5d2a0a4852aea53f515b4a",
-                "HOST": "ec2-44-198-236-169.compute-1.amazonaws.com",
-                "PORT":"5432", 
-    }
-=======
     "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}
     #     "default": {
     #         "ENGINE": "django.db.backends.postgresql",
@@ -138,7 +112,6 @@ DATABASES = {
     #         "HOST": "localhost",
     #         "PORT": "5432",
     #     }
->>>>>>> 3e05ae341ef2088b62886df523f1be53c46302b2
 }
 
 # Overwites default database to Heroku postgresql db
@@ -172,30 +145,19 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-<<<<<<< HEAD
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = "/static/"
-
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-=======
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 
 STATICFILE_DIRS = [os.path.join(BASE_DIR, "static")]
->>>>>>> 3e05ae341ef2088b62886df523f1be53c46302b2
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-<<<<<<< HEAD
-API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
-=======
 API_KEY = os.environ.get(
     "API_KEY_SPOONACULAR"
 )  # Spoonacular API key from Heroku server
 # API_KEY = "9f97e9f457aa4379ba2cb4c32072aec4"  # Spoonacular API key
->>>>>>> 3e05ae341ef2088b62886df523f1be53c46302b2
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -208,12 +170,6 @@ LOGIN_REDIRECT_URL = "main-home"
 
 LOGIN_URL = "login"
 
-<<<<<<< HEAD
-#django_heroku.settings(locals())
-
-#Define COOKIE AGE for Remember me section
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 30 * 12 # 12 Months (Months are 30days so 360 days in total)
-=======
 # Define COOKIE AGE for Remember me section
 # SESSION_COOKIE_AGE = (
 #     60 * 60 * 24 * 30 * 12
@@ -233,4 +189,3 @@ AWS_S3_SIGNATURE_VERSION = "s3v4"
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 # Automatically put your static files in your bucket
 STATICFILES_STORAGE = "storages.backends.s3boto3.S3StaticStorage"
->>>>>>> 3e05ae341ef2088b62886df523f1be53c46302b2

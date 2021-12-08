@@ -14,17 +14,6 @@ class Profile(models.Model):
     def __str__(self):
         return f"{self.user.username} Profile"
 
-<<<<<<< HEAD
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-
-        img = Image.open(self.image.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
-=======
     # Below code only for handling images in local
     # Connecting S3 using Pillow will casue issue so that comments out
 
@@ -36,4 +25,3 @@ class Profile(models.Model):
     #         output_size = (300, 300)
     #         img.thumbnail(output_size)
     #         img.save(self.image.path)
->>>>>>> 3e05ae341ef2088b62886df523f1be53c46302b2
